@@ -11,3 +11,7 @@
 .hero{grid-template-columns:1fr 1.12fr;padding-top:38px;padding-bottom:32px;gap:40px}.hero h1{font-size:clamp(48px,4.9vw,74px);line-height:1.15;letter-spacing:-.06em;margin:17px 0 22px}.hero-art{max-width:620px;padding-top:0}.hero-art>p{font-size:12px;line-height:1.65;margin-top:-3px;color:#778073}.hero .lead{font-size:17px;line-height:1.8}.hero-action{margin-top:22px}.brand img{object-fit:contain}.story-heading>p:last-child{line-height:1.85}
 @media(max-width:1000px){.hero{gap:20px;padding-inline:0}.hero h1{font-size:54px}.hero .lead{font-size:15px}}
 @media(max-width:760px){.hero{grid-template-columns:1fr;gap:20px;padding-block:30px}.hero h1{font-size:52px}.hero-art{max-width:480px}.hero-art>p{font-size:11px}}
+
+/* One-line title and physically traced projection artwork. */
+.hero{grid-template-columns:1.3fr 1fr;gap:32px}.hero h1{font-size:clamp(26px,4.1vw,60px);white-space:nowrap;line-height:1.2}.hero-art img{border-radius:12px}.hero-art>p{margin-top:9px}
+@media(max-width:760px){.hero{grid-template-columns:1fr;gap:22px}.hero h1{font-size:clamp(26px,6.7vw,48px)}}
