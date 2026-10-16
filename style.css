@@ -22,3 +22,13 @@
 .hero{grid-template-columns:minmax(0,1fr) 250px;gap:60px;padding:32px 24px 30px}.hero h1{font-size:clamp(28px,3.9vw,56px);margin:13px 0 17px;line-height:1.2;white-space:nowrap}.hero .lead{font-size:16px;line-height:1.8}.hero-action{margin-top:20px}.hero-art{width:250px;max-width:100%;justify-self:end}.hero-art>p{font-size:10px;line-height:1.65;margin-top:6px}.hero-art img{border-radius:8px}.brand img{flex:none}.brand{gap:9px}
 @media(max-width:1000px){.hero{grid-template-columns:minmax(0,1fr) 210px;gap:24px;padding-inline:0}.hero-art{width:210px}.hero .lead{font-size:14px}}
 @media(max-width:760px){.hero{grid-template-columns:1fr;gap:18px;padding-block:26px}.hero h1{font-size:clamp(24px,5.9vw,42px)}.hero-art{width:180px;justify-self:center}.hero-art>p{font-size:9px}}
+
+/* Place the explanation beside a larger projection figure. */
+.hero{grid-template-columns:minmax(0,1fr) 440px;gap:32px}.hero-art{width:440px;display:grid;grid-template-columns:310px minmax(0,1fr);gap:16px;align-items:center}.hero-art>p{margin:0;text-align:left;font-size:11px;line-height:1.8;word-break:keep-all;border-left:1px solid var(--line);padding-left:12px}
+@media(max-width:1000px){.hero{grid-template-columns:minmax(0,1fr) 360px;gap:24px}.hero-art{width:360px;grid-template-columns:248px minmax(0,1fr);gap:16px}.hero-art>p{font-size:10px;padding-left:10px}}
+@media(max-width:760px){.hero{grid-template-columns:1fr}.hero-art{width:440px;max-width:100%;grid-template-columns:minmax(0,1fr) 104px;gap:12px;justify-self:center}.hero-art>p{font-size:10px}}
+
+@media(max-width:760px){.hero{grid-template-columns:minmax(0,1fr)}.hero-art{width:100%;max-width:440px;min-width:0}.hero-copy{min-width:0}}
+
+/* Match the map panel to the height of the visible condition panel. */
+@media(min-width:761px){.map-panel{display:flex;flex-direction:column}#map{height:auto;min-height:240px;flex:1 1 0}.map-top,.map-panel>p,.map-panel .data-reading{flex:none}}
