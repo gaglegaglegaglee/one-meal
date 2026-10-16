@@ -13,7 +13,7 @@ function filter(count=state.count){return {sido:$('#sido').value,sigungu:$('#sig
 function regions(){const frag=document.createDocumentFragment();frag.append(new Option('전국',''));for(const s of Object.keys(state.meta.regions))frag.append(new Option(s,s));$('#sido').replaceChildren(frag);districts();}
 function districts(){
  const frag=document.createDocumentFragment();frag.append(new Option('전체 시·군·구',''));
- const regions=[...new Set(state.meta.regions[$('#sido').value]??[])];
+ const regions=[...new Set(state.meta.regions[$('#sido').value]??[])].sort((a,b)=>Number(a.includes('미확인'))-Number(b.includes('미확인')));
  const parents=new Set(regions.filter(g=>g.includes(' ')&&g.split(' ')[0].endsWith('시')).map(g=>g.split(' ')[0]));
  const emitted=new Set();
  for(const g of regions){
