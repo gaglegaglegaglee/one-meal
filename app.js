@@ -11,7 +11,19 @@ function date(value){return /^\d{8}$/.test(value??'')?value.replace(/(\d{4})(\d{
 function badge(id){const t=topicById.get(id);return node('span','badge topic-'+id,`${icons[id]||'＋'} ${t?.label||id}`);}
 function filter(count=state.count){return {sido:$('#sido').value,sigungu:$('#sigungu').value,query:$('#search').value.trim(),normalizedQuery:normalize($('#search').value),topics:state.topics,mode:state.mode,count};}
 function regions(){const frag=document.createDocumentFragment();frag.append(new Option('전국',''));for(const s of Object.keys(state.meta.regions))frag.append(new Option(s,s));$('#sido').replaceChildren(frag);districts();}
-function districts(){const frag=document.createDocumentFragment();frag.append(new Option('전체 시·군·구',''));const cities=new Set();for(const g of state.meta.regions[$('#sido').value]??[]){if(g.includes(' ')){const city=g.split(' ')[0];if(!cities.has(city)){frag.append(new Option(city+' 전체',city));cities.add(city);}}frag.append(new Option(g,g));}$('#sigungu').replaceChildren(frag);$('#sigungu').disabled=!$('#sido').value;}
+function districts(){
+ const frag=document.createDocumentFragment();frag.append(new Option('전체 시·군·구',''));
+ const regions=[...new Set(state.meta.regions[$('#sido').value]??[])];
+ const parents=new Set(regions.filter(g=>g.includes(' ')&&g.split(' ')[0].endsWith('시')).map(g=>g.split(' ')[0]));
+ const emitted=new Set();
+ for(const g of regions){
+  if(parents.has(g))continue;
+  const city=g.split(' ')[0];
+  if(parents.has(city)&&!emitted.has(city)){frag.append(new Option(city+' 전체',city));emitted.add(city);}
+  frag.append(new Option(g,g));
+ }
+ $('#sigungu').replaceChildren(frag);$('#sigungu').disabled=!$('#sido').value;
+}
 function criteria(){const frag=document.createDocumentFragment();for(const t of state.meta.topics){topicById.set(t.id,t);const label=node('label','criterion topic-'+t.id);const input=node('input');input.type='checkbox';input.value=t.id;input.name='topic';const icon=node('span','criterion-icon',icons[t.id]||'＋');icon.setAttribute('aria-hidden','true');const copy=node('span','criterion-copy');copy.append(node('strong','',t.label),node('small','',t.id==='muslim'?t.description:t.id==='pet'?'동반 구역·제한 조건 함께 확인':t.id==='access'?'시설별 출입·편의 정보':t.id==='heritage'?'2022년 공식 등재 기록':t.id==='hygiene'?'위생등급·모범 기록':t.id==='taste'?'관광공사·지자체 소개':'공식 자료의 메뉴·가격'));label.title=t.description;label.append(input,icon,copy,node('span','checkmark','✓'));input.addEventListener('change',()=>{state.topics=[...document.querySelectorAll('input[name=topic]:checked')].map(x=>x.value);refresh();});frag.append(label);}$('#criteria').replaceChildren(frag);}
 function mode(){document.querySelectorAll('[data-mode]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.mode===state.mode)));}
 function reset(){state.topics=[];state.count=null;state.mode='and';$('#sido').value='';districts();$('#search').value='';$('#sort').value='topics';document.querySelectorAll('input[name=topic]').forEach(x=>x.checked=false);mode();refresh();}
