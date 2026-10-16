@@ -1,0 +1,1 @@
+Twemoji graphics © Twitter, Inc and other contributors. Licensed under CC BY 4.0: https://creativecommons.org/licenses/by/4.0/ . Source: https://github.com/twitter/twemoji (assets/svg/1f4c5.svg, 1f6e1.svg, 1f36c.svg). Unmodified SVG artwork.

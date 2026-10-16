@@ -37,3 +37,6 @@
 .results-heading{display:block;min-height:0;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--line)}.results-title-row{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-top:3px}.results-title-row h2{margin-top:0;flex:none}.result-tools{margin:0;padding:0;border:0;gap:14px;flex-wrap:nowrap}.results-summary-row{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:24px}.results-summary-row #filter-summary{margin-top:0}.results-summary-row .quiet-button{padding-block:2px;white-space:nowrap}
 @media(max-width:960px){.results-title-row{flex-wrap:wrap;gap:8px}.result-tools{flex-wrap:wrap;gap:10px;margin-left:auto}}
 @media(max-width:760px){.result-tools{width:100%;margin-left:0}.results-summary-row{align-items:flex-start}}
+
+/* Local emoji artwork keeps the three topic symbols identical in web and print. */
+.topic-emoji{width:1.1em;height:1.1em;object-fit:contain;vertical-align:-.15em;display:inline-block}.topic-emoji.criterion-icon{width:24px;height:24px}.badge .topic-emoji{margin-right:.15em}
