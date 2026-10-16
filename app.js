@@ -3,7 +3,7 @@ const $=selector=>document.querySelector(selector);
 const state={rows:[],filtered:[],meta:null,topics:[],mode:'and',visible:8,count:null};
 let map,cluster,selectedMarker,opener,searchTimer,loaded=false,mapSignature='',detailRequest=0;
 const detailShards=new Map(),fmt=n=>Number(n).toLocaleString('ko-KR');
-const icons={price:'₩',hygiene:'✓',heritage:'⌛',taste:'✦',pet:'♧',access:'↗',muslim:'◈'};
+const icons={price:'₩',hygiene:'✓',heritage:'⌛',taste:'✦',pet:'🐶',access:'♿',muslim:'🕌'};
 const topicById=new Map(),sourceById=new Map();
 function node(tag,className,text){const e=document.createElement(tag);if(className)e.className=className;if(text!==undefined)e.textContent=String(text);return e;}
 function link(label,url,className=''){const a=node('a',className,label),href=safeURL(url);if(href){a.href=href;a.target='_blank';a.rel='noopener noreferrer';}return a;}
