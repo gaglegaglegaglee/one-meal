@@ -32,3 +32,8 @@
 
 /* Match the map panel to the height of the visible condition panel. */
 @media(min-width:761px){.map-panel{display:flex;flex-direction:column}#map{height:auto;min-height:240px;flex:1 1 0}.map-top,.map-panel>p,.map-panel .data-reading{flex:none}}
+
+/* Put count/sort controls beside the restaurant total. */
+.results-heading{display:block;min-height:0;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--line)}.results-title-row{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-top:3px}.results-title-row h2{margin-top:0;flex:none}.result-tools{margin:0;padding:0;border:0;gap:14px;flex-wrap:nowrap}.results-summary-row{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:24px}.results-summary-row #filter-summary{margin-top:0}.results-summary-row .quiet-button{padding-block:2px;white-space:nowrap}
+@media(max-width:960px){.results-title-row{flex-wrap:wrap;gap:8px}.result-tools{flex-wrap:wrap;gap:10px;margin-left:auto}}
+@media(max-width:760px){.result-tools{width:100%;margin-left:0}.results-summary-row{align-items:flex-start}}
