@@ -17,3 +17,8 @@
 @media(max-width:760px){.hero{grid-template-columns:1fr;gap:22px}.hero h1{font-size:clamp(26px,6.7vw,48px)}}
 
 .hero-concept{font-size:23px;font-weight:700;letter-spacing:-.04em;margin:-5px 0 17px;color:var(--ink)}
+
+/* Compact food identity: the exploration controls come into view sooner. */
+.hero{grid-template-columns:minmax(0,1fr) 250px;gap:60px;padding:32px 24px 30px}.hero h1{font-size:clamp(28px,3.9vw,56px);margin:13px 0 17px;line-height:1.2;white-space:nowrap}.hero .lead{font-size:16px;line-height:1.8}.hero-action{margin-top:20px}.hero-art{width:250px;max-width:100%;justify-self:end}.hero-art>p{font-size:10px;line-height:1.65;margin-top:6px}.hero-art img{border-radius:8px}.brand img{flex:none}.brand{gap:9px}
+@media(max-width:1000px){.hero{grid-template-columns:minmax(0,1fr) 210px;gap:24px;padding-inline:0}.hero-art{width:210px}.hero .lead{font-size:14px}}
+@media(max-width:760px){.hero{grid-template-columns:1fr;gap:18px;padding-block:26px}.hero h1{font-size:clamp(24px,5.9vw,42px)}.hero-art{width:180px;justify-self:center}.hero-art>p{font-size:9px}}
